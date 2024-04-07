@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "80b7eeb2-319f-4e1e-a337-85c65eba210e",
+		"name": "User Entity APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "11451556"
+	},
+	"item": [
+		{
+			"name": "/v1/users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": [\n        { \"field\": \"first\", \"is\": \"=\", \"value\": \"Luke\" }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3010/api/v1/users/luke.birdeau.16"
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"jan.smith.1\",\n    \"first\": \"Jan\",\n    \"last\": \"Smith\",\n    \"email\": \"jan.smith@pluck.com\",\n    \"plan\": \"starter\",\n    \"cycle\": \"monthly\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3010/api/v1/users"
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users/:userId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3010/api/v1/users/luke.birdeau.7"
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users/:userId",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cycle\": \"yearly\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3010/api/v1/users/luke.birdeau.35"
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users/:userId",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:3010/api/v1/users/luke.birdeau.39"
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users/:userId/plans",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"plan\": \"developer\",\n    \"cycle\": \"yearly\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3010/api/v1/users/jan.smith.1/plans"
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users/SEARCH",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3002/apis/v1/users/SEARCH"
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users/COUNT",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": [\n        { \"field\": \"email\", \"is\": \"=\", \"value\": \"jan\\\\.smith\\\\@pluck\\\\.com\" }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3010/api/v1/users/COUNT"
+			},
+			"response": []
+		}
+	]
+}
