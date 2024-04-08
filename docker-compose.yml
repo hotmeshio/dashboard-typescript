@@ -12,22 +12,20 @@ services:
       interval: 30s
       timeout: 10s
       retries: 3
-    networks:  # Add the networks section
-      - my_network  # Use the same network name as the first Docker Compose file
+    networks:
+      - my_network
 
   hotmesh-dashboard:
     build:
       context: .
       target: development
-    command: npm run service
     container_name: hotmesh-dashboard
     volumes:
       - .:/app
-      - ./node_modules:/app/node_modules
+      - /app/node_modules
     ports:
       - "3010:3010"
     environment:
-      - NODE_ENV=development
       - PORT=3010
     depends_on:
       r6374:
@@ -37,8 +35,8 @@ services:
       interval: 5s
       timeout: 4s
       retries: 50
-    networks:  # Add the networks section
-      - my_network  # Use the same network name as the first Docker Compose file
+    networks:
+      - my_network
 
-networks:  # Define the network at the bottom of the file
+networks:
   my_network:
