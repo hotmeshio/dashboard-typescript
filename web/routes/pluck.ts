@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { Types } from '../../services/pluck/config';
-//import { GPT } from '../../services/ai/gpt'
+// import { GPT } from '../../services/ai/gpt'
 import { User } from '../../services/pluck/user';
 import { Bill } from '../../services/pluck/bill';
 
