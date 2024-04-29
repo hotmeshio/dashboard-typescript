@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { Types } from '../../services/pluck/config';
-//import { GPT } from '../../services/ai/gpt'
+import { GPT } from '../../services/ai/gpt'
 import { User } from '../../services/pluck/user';
 import { Bill } from '../../services/pluck/bill';
 
@@ -13,10 +13,10 @@ router.post('/:method', async (req, res) => {
   const params = req.params as Types.StringAnyType;
   const data = req.body?.data;
 
-  // if (params.method === 'ask') {
-  //   const response = await GPT.ask(data.messages);
-  //   return res.status(200).send(response);
-  // }
+  if (params.method === 'ask') {
+    const response = await GPT.ask(data.messages);
+    return res.status(200).send(response);
+  }
 
   //metadata holds 'entity' type and 'await' flag
   const md = req.body?.metadata;

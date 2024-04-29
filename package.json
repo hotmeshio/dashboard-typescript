@@ -16,7 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "@honeycombio/opentelemetry-node": "^0.5.0",
-    "@hotmeshio/pluck": "^0.0.28",
+    "@hotmeshio/pluck": "^0.0.29",
     "@opentelemetry/auto-instrumentations-node": "^0.39.2",
     "@opentelemetry/sdk-node": "^0.43.0",
     "cors": "^2.8.5",
@@ -26,6 +26,7 @@
     "ioredis": "^5.3.2",
     "morgan": "^1.10.0",
     "openai": "^4.29.2",
+    "redis": "^4.6.13",
     "socket.io": "^4.7.4",
     "uuid": "^9.0.1",
     "winston": "^3.13.0"

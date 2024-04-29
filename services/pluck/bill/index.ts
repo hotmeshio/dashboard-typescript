@@ -1,5 +1,5 @@
 import { Pluck, Types } from '@hotmeshio/pluck';
-import Redis from 'ioredis';
+import * as Redis from 'redis';
 
 import config from '../../../config';
 
@@ -33,15 +33,10 @@ class Bill {
 
   //initialize Redis, including RediSearch configuration
   pluck = new Pluck(
-    Redis, 
-    {
-      host: config.REDIS_HOST,
-      port: config.REDIS_PORT,
-      password: config.REDIS_PASSWORD,
-      db: config.REDIS_DATABASE,
-    },
+    Redis,
+    { url: `redis://:${config.REDIS_PASSWORD}@${config.REDIS_HOST}:${config.REDIS_PORT}` },
     undefined,
-    this.search
+    this.search,
   );
 
 //******************* ON-CONTAINER-STARTUP COMMANDS ********************
